@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import {
   BarChart3,
   Brain,
@@ -18,7 +18,8 @@ import {
   Bug,
   ChevronDown,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Home
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -67,6 +68,7 @@ const navSections = [
 
 export default function Sidebar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [expandedSections, setExpandedSections] = useState(() => {
     const currentSection = navSections.find(section =>
       section.items.some(item => location.pathname.startsWith(item.path))
@@ -84,21 +86,38 @@ export default function Sidebar() {
 
   return (
     <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-screen fixed left-0 top-0">
-      {/* Logo */}
+      {/* Logo - Clickable to go home */}
       <div className="p-4 border-b border-gray-200">
-        <div className="flex items-center gap-2">
+        <button
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+        >
           <div className="w-8 h-8 bg-walmart-blue rounded-lg flex items-center justify-center">
             <BarChart3 className="w-5 h-5 text-white" />
           </div>
-          <div>
+          <div className="text-left">
             <h1 className="font-semibold text-gray-900">Growth Platform</h1>
             <p className="text-xs text-gray-500">Walmart Connect</p>
           </div>
-        </div>
+        </button>
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto p-3">
+        {/* Home Link */}
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium mb-2 transition-colors ${
+              isActive
+                ? 'bg-walmart-blue text-white'
+                : 'text-gray-700 hover:bg-gray-100'
+            }`
+          }
+        >
+          <Home className="w-4 h-4" />
+          <span>Home</span>
+        </NavLink>
         {navSections.map((section) => {
           const isExpanded = expandedSections.includes(section.id);
           const isActive = section.items.some(item =>

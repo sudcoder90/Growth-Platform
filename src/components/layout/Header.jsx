@@ -41,7 +41,7 @@ export default function Header({ title, subtitle }) {
           {/* User Menu */}
           <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
             <div className="text-right">
-              <p className="text-sm font-medium text-gray-900">Sarah Chen</p>
+              <p className="text-sm font-medium text-gray-900">Sudarshan</p>
               <p className="text-xs text-gray-500">Product Manager</p>
             </div>
             <div className="w-9 h-9 bg-walmart-blue rounded-full flex items-center justify-center">

@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+// Onboarding
+import { Onboarding } from './pages/onboarding';
+
 // Customer Intelligence pages
 import { Dashboard, DataAnalysis, Competitive } from './pages/customer-intelligence';
 
@@ -16,8 +19,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default redirect to dashboard */}
-        <Route path="/" element={<Navigate to="/intelligence/dashboard" replace />} />
+        {/* Onboarding - Landing Page */}
+        <Route path="/" element={<Onboarding />} />
 
         {/* Customer Intelligence */}
         <Route path="/intelligence/dashboard" element={<Dashboard />} />
@@ -40,7 +43,7 @@ function App() {
         <Route path="/monitoring/bugs" element={<AutomatedBugTickets />} />
 
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/intelligence/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
