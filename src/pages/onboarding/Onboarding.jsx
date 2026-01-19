@@ -61,8 +61,7 @@ export default function Onboarding() {
               <BarChart3 className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Growth Platform</h1>
-              <p className="text-sm text-gray-500">Walmart Connect</p>
+              <h1 className="text-xl font-bold text-gray-900">Walmart Growth Platform</h1>
             </div>
           </div>
         </div>
@@ -161,7 +160,7 @@ export default function Onboarding() {
       <footer className="border-t border-gray-200 bg-white mt-12">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <p className="text-sm text-gray-500 text-center">
-            Growth Platform v1.0 | Walmart Connect
+            Walmart Growth Platform v1.0
           </p>
         </div>
       </footer>

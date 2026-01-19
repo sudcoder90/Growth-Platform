@@ -96,8 +96,7 @@ export default function Sidebar() {
             <BarChart3 className="w-5 h-5 text-white" />
           </div>
           <div className="text-left">
-            <h1 className="font-semibold text-gray-900">Growth Platform</h1>
-            <p className="text-xs text-gray-500">Walmart Connect</p>
+            <h1 className="font-semibold text-gray-900">Walmart Growth Platform</h1>
           </div>
         </button>
       </div>
@@ -177,7 +176,7 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="p-4 border-t border-gray-200">
         <div className="text-xs text-gray-500 text-center">
-          Growth Platform v1.0
+          Walmart Growth Platform v1.0
         </div>
       </div>
     </aside>
